@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>MiniProject2</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+	<div id="sidebar">
+		<div id="logo">
+		<%= link_to root_path do %>
+			<%= image_tag "logo.jpeg" %>
+			<%end%>
+		</div>
+
+		<ul class="list">
+			<li class="category">Website</li>
+			<li><%= link_to "Blog", root_path %></li>
+			<li>About</li>
+		</ul>
+	</div>
+
+    <%= yield %>
+  </body>
+</html>
