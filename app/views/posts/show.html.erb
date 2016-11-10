@@ -7,6 +7,14 @@
 <p class="body">
 	<%= @post.body %>
 </p>
+
+<div id="comments">
+	<p><%= @post.comments.count%> comments</p>
+	<%= render @post.comments %>
+	<p>Add a comment:</p>
+	<%= render "comments/form" %>
+</div>
+
 <p> <%= link_to "Edit", edit_post_path(@post) %> </p>
 <p> <%= link_to "New Post", new_post_path(@post) %> </p>
 <p> <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: 'Are you sure'} %></p>
