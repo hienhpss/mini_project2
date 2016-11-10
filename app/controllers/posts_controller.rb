@@ -1,12 +1,17 @@
 class PostsController < ApplicationController
 	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, only: [:create, :new, :show, :edit, :update, :destroy]
+	
+
 	#before_action :set_event, :only => [ :show, :edit, :update, :destroy]
 
 	def index
+		Rails.logger.info current_user
 		@posts = Post.all.order('created_at DESC')
 	end
 
 	def new
+		puts current_user
 		@post = current_user.posts.build
 	end
 

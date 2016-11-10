@@ -3,4 +3,4 @@
 <p><%= comment.body %></p>
 <p><%= time_ago_in_words(comment.created_at) %> ago</p>
 
-<p><%= link_to "delete", [commnet.post, comment], method: delete, class: "button", data: {confirm: 'Are you sure?'%></p>
+<p><%= link_to "Delete", post_comment_path(comment.post, comment), method: :delete, class: "button", data: { confirm: 'Are you sure?' } %></p>
