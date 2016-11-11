@@ -1,4 +1,6 @@
-<h1>New post</h1>
+<div class="page_wrapper">
+
+<h2>New post</h2>
 
 <%= form_for @post do |f| %>
 	<% if @post.errors.any? %>
@@ -25,3 +27,4 @@
 		<%= f.submit %>
 	</p>
 	<%end%>
+</div>

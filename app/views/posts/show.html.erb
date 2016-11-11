@@ -1,6 +1,7 @@
-<h1 class="title">
+<div class="post">
+<h2 class="title"> Title:
 	<%= @post.title %>
-</h1>
+</h2>
 <p class="date">
 	Submitted <%= time_ago_in_words(@post.created_at) %> ago
 </p>
@@ -19,3 +20,5 @@
 <p> <%= link_to "New Post", new_post_path(@post) %> </p>
 <p> <%= link_to "Delete", post_path(@post), method: :delete, data: {confirm: 'Are you sure?'} %></p>
 <p> <%= link_to "All post", root_path %></p>
+
+</div>

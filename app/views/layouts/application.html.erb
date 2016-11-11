@@ -5,36 +5,43 @@
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+  	<nav class="navbar navbar-inverse">
+	  	<div class="container">
+	    	<ul class="nav navbar-nav navbar-right">
+				<% if user_signed_in? %>
+  			<li>
+  				<%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
+ 			</li>
+			<% else %>
+  			<li>
+  				<%= link_to('Login', new_user_session_path)  %>  
+  			</li>
+		<% end %>
+		</ul>
+  	</div>
+	</nav>
 	<div id="sidebar">
 		<div id="logo">
 		<%= link_to root_path do %>
 			<%= image_tag "logo.jpeg" %>
 			<%end%>
 		</div>
-		<div>
-			<% if user_signed_in? %>
-		  <li>
-		  <%= link_to('Logout', destroy_user_session_path, :method => :delete) %>        
-		  </li>
-		<% else %>
-		  <li>
-		  <%= link_to('Login', new_user_session_path)  %>  
-		  </li>
-		<% end %>
-		</div>
-
 		<ul>
 			<li>Home</li>
 			<li><%= link_to "Forum", root_path %></li>
 			<li>About</li>
 		</ul>
 	</div>
+
+	<div class="content">
 		<p class="notice"><%= notice %></p>
        	<p class="alert"><%= alert %></p>
     <%= yield %>
+    </div>
   </body>
 </html>
