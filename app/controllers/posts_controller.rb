@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 		
 	end
 
-	def udpate
+	def update
 		if @post.update(post_params)
 			redirect_to @post
 		else
@@ -53,8 +53,8 @@ class PostsController < ApplicationController
 		
 	end
 
-	def events_params
- 		params.require(:event).permit(:name, :description,
+	def post_params
+ 		params.require(:post).permit(:title, :body,
 :category_id)
  	end
 end
