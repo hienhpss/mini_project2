@@ -8,6 +8,7 @@ class PostsController < ApplicationController
 	def index
 		Rails.logger.info current_user
 		@posts = Post.all.order('created_at DESC')
+		@posts = Post.page(params[:page]).per(5)
 	end
 
 	def new
