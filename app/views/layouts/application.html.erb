@@ -27,14 +27,13 @@
 	</nav>
 	<div id="sidebar">
 		<div id="logo">
-		<%= link_to root_path do %>
 			<%= image_tag "logo.jpeg" %>
-			<%end%>
 		</div>
+
 		<ul>
-			<li>Home</li>
+			<li class="clearfix:after"></li>
 			<li><%= link_to "Forum", root_path %></li>
-			<li>About</li>
+			<li><%= link_to "About", about_path %></li>
 		</ul>
 	</div>
 
