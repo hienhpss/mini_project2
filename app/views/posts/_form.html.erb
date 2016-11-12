@@ -20,6 +20,9 @@
 	</p>
 
 	<p>
-		<%= f.submit %>
+		<%= f.collection_select :category_id,
+Category.all, :id, :name, :include_blank =>
+"Please select category" %>
 	</p>
+	<p><%= f.submit %></p>
 	<%end%>

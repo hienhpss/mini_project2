@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-	before_action :find_post, only: [:show, :edit, :update, :destroy]
+	before_action :find_post, only: [:show, :edit, :update, :destroy, :dashboard]
 	before_action :authenticate_user!, only: [:create, :new, :show, :edit, :update, :destroy]
 	
 
@@ -53,8 +53,8 @@ class PostsController < ApplicationController
 		
 	end
 
-	def post_params
-		params.require(:post).permit(:title, :body)
-	end
-
+	def events_params
+ 		params.require(:event).permit(:name, :description,
+:category_id)
+ 	end
 end
